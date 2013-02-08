@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	
+	"name": "Auto login",
+	"description": "My Login ext.",
+  	"version": "1.0",
+	"background": { "scripts": ["background.js"] },
+	"options_page": "options.html",
+    "permissions" : [
+    "tabs", "storage"
+    ],
+    "icons":{
+     "128": "icon.png"
+     },
+     "content_scripts": [
+     {
+       "matches": ["http://192.168.100.1/*", "https://192.168.100.1/*"],
+       "js": ["jquery.js", "autologin.js"],
+       "run_at": "document_idle"
+     }
+    ]
+}
